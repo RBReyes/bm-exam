@@ -12,7 +12,7 @@
     </nav>
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <h4 class="mb-4">List of Things To Do</h4>
             <!-- <p>{{data}}</p> -->
             <table class="table table-borderless">

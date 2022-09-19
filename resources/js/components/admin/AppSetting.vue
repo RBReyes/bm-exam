@@ -12,7 +12,7 @@
 </nav>
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
-    <div class="card-body">
+    <div class="card-body table-responsive">
         <h4 class="mb-4">Application Setting</h4>
         <table class="table table-borderless">
         <thead>
