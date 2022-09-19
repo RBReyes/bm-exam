@@ -1,3 +1,30 @@
+
+Why my UI and UX implementation is the best?
+
+ 1. My UI's Design predicts users’ needs.
+ 2. I keep interfaces simple and user friendly
+
+Why my code implementation is the best
+ 1. Variable naming conventions.
+ 2. Class and function naming conventions.
+ 4. Portability.
+ 5. Reusability and scalability.
+
+Techologies use:
+ 
+ PHP Laravel 8
+ VueJs
+ Mysql
+ Adobe XD
+ Bootstrap
+ JQuery
+ Git
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
