@@ -1,0 +1,11 @@
+    <script src="{{ asset('jpn_eb/assets/vendors/core/core.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/chartjs/Chart.min.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/jquery.flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/jquery.flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/vendors/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/js/template.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/js/dashboard-light.js') }}"></script>
+    <script src="{{ asset('jpn_eb/assets/js/datepicker.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" ></script>

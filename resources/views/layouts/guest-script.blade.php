@@ -1,0 +1,9 @@
+<script src="{{ asset('jpn_eb/js/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/particles.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/particlerun.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/plugin.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/main.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/custom-swiper.js') }}"></script>
+<script src="{{ asset('jpn_eb/js/custom-nav.js') }}"></script>
+<script src="{{ asset('js/app.js') }}" ></script>
