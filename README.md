@@ -2,6 +2,18 @@ Note:
     1. The Required weather update will display in every City profile.
     2. API used (https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={appid})
 
+Demo:  
+
+Note: This domain is for demo purposes only
+
+Admin Management: 
+                                link: https://camsur-hris.live/admin
+                                username: admin@example.com
+                                password: asdasd
+
+Guest Application: 
+                              link: https://camsur-hris.live
+
 Why my UI and UX implementation is the best?
 
  1. My UI's Design predicts users’ needs.
