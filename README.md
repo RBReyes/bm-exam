@@ -1,3 +1,6 @@
+Note:
+    1. The Required weather update will display in every City profile.
+    2. API used (https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={appid})
 
 Why my UI and UX implementation is the best?
 
@@ -14,15 +17,8 @@ Application Consist of users
  1. admin (for dynamic content)
  2. guest		
 
-Techologies use:
- 
- PHP Laravel 8
- VueJs
- Mysql
- Adobe XD
- Bootstrap
- JQuery
- Git
+Techologies used:
+ PHP Laravel 8,VueJs, Mysql, Adobe XD, Bootstrap, JQuery, Git
 
 
 
