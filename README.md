@@ -10,6 +10,10 @@ Why my code implementation is the best
  4. Portability.
  5. Reusability and scalability.
 
+Application Consist of users
+ 1. admin (for dynamic content)
+ 2. guest		
+
 Techologies use:
  
  PHP Laravel 8
