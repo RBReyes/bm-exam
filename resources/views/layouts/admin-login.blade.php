@@ -1,10 +1,15 @@
 <div class="page-wrapper d-flex justify-content-center" style="margin: auto">
 
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center" style="padding: 10px;">
 
         <div class="col-md-6 grid-margin stretch-card" style="max-width: 508px;">
             <div class="card">
                 <div class="card-body">
+                    <div class="row my-5">
+                        <div class="text-center">
+                            <img src="../jpn_eb/images/logo.png" alt="logo" class="100">
+                        </div>
+                    </div>
                     <h4 class="mb-4">Log-in Here</h4>
                     <form class="forms-sample" method="post" action="{{ route('login') }}">
                         @csrf
