@@ -13,129 +13,154 @@ use App\Models\ThingToDo;
 
 class GuestController extends Controller
 {
+    public function checkMaintenance()
+    {
+        $k = AppSetting::where('id', 1)->first();
+        return $k->status;
+    }
 
-    public function getGuide($id){
-        $data = Plan::where('id',$id)
-        ->get();
+    public function getGuide($id)
+    {
+        $data = Plan::where('id', $id)
+            ->get();
         return response()->json([
             'status' => true,
             'message' => 'success',
             'data' => $data
         ]);
-
     }
-    public function  viewPlan($id){
-        $data = Plan::where('id',$id)
-        ->first();
+    public function  viewPlan($id)
+    {
 
-        return view('guest.plan',[
-            'kes'=>$data,
+        if ($this->checkMaintenance() == 1) {
+            return view('layouts.maintenance');
+        } else {
+            $data = Plan::where('id', $id)
+                ->first();
 
-            'city'=>$this->city(),
-            'plan'=>$this->plan(),
-            'cat'=>$this->category(),
-        ]);
+            return view('guest.plan', [
+                'kes' => $data,
 
-
-    }
-
-    public function  viewToDo($id){
-
-        $data = Category::with('todo.city')
-        ->where('id',$id)
-        ->first();
-        return view('guest.to-do',[
-            'kes'=>$data,
-            'city'=>$this->city(),
-            'plan'=>$this->plan(),
-            'cat'=>$this->category(),
-        ]);
-
-
+                'city' => $this->city(),
+                'plan' => $this->plan(),
+                'cat' => $this->category(),
+            ]);
+        }
     }
 
-    public function  viewCity($id){
-
-        $data = City::with('todo.city')
-        ->where('id',$id)
-        ->first();
-        return view('guest.city',[
-            'kes'=>$data,
-            'city'=>$this->city(),
-            'plan'=>$this->plan(),
-            'cat'=>$this->category(),
-        ]);
-
-
+    public function  viewToDo($id)
+    {
+        if ($this->checkMaintenance() == 1) {
+            return view('layouts.maintenance');
+        } else {
+            $data = Category::with('todo.city')
+                ->where('id', $id)
+                ->first();
+            return view('guest.to-do', [
+                'kes' => $data,
+                'city' => $this->city(),
+                'plan' => $this->plan(),
+                'cat' => $this->category(),
+            ]);
+        }
     }
 
-
-    public function  viewSubToDo($id){
-
-        $data = ThingToDo::with(['category','city'])
-        ->where('id',$id)
-        ->first();
-        return view('guest.thing-to-do',[
-            'kes'=>$data,
-            'city'=>$this->city(),
-            'plan'=>$this->plan(),
-            'cat'=>$this->category(),
-        ]);
-
-
+    public function  viewCity($id)
+    {
+        if ($this->checkMaintenance() == 1) {
+            return view('layouts.maintenance');
+        } else {
+            $data = City::with('todo.city')
+                ->where('id', $id)
+                ->first();
+            return view('guest.city', [
+                'kes' => $data,
+                'city' => $this->city(),
+                'plan' => $this->plan(),
+                'cat' => $this->category(),
+            ]);
+        }
     }
 
 
-    
-   
+    public function  viewSubToDo($id)
+    {
+        if ($this->checkMaintenance() == 1) {
+            return view('layouts.maintenance');
+        } else {
+            $data = ThingToDo::with(['category', 'city'])
+                ->where('id', $id)
+                ->first();
+            return view('guest.thing-to-do', [
+                'kes' => $data,
+                'city' => $this->city(),
+                'plan' => $this->plan(),
+                'cat' => $this->category(),
+            ]);
+        }
+    }
 
-    public function landing(){
-      
+
+
+
+
+    public function landing()
+    {
+
         return view('admin.app-setting');
     }
-    public function city(){
-        return City::where('status',1)->orderBy('name','asc')->get();
+    public function city()
+    {
+        return City::where('status', 1)->orderBy('name', 'asc')->get();
     }
 
-    public function plan(){
-        return Plan::where('status',1)->orderBy('name','asc')->get();
+    public function plan()
+    {
+        return Plan::where('status', 1)->orderBy('name', 'asc')->get();
     }
 
-    public function category(){
-        return Category::with('todo')->where('status',1)->orderBy('name','asc')->get();
+    public function category()
+    {
+        return Category::with('todo')->where('status', 1)->orderBy('name', 'asc')->get();
     }
-    public function guestHome(){
-        $city= City::where('status',1)->orderBy('name','asc')->get();
-        $plan= Plan::where('status',1)->orderBy('name','asc')->get();
-        $cat= Category::with('todo')->where('status',1)->orderBy('name','asc')->get();
-        return view('guest.home',[
-            'city'=>$city,
-            'plan'=>$plan,
-            'cat'=>$cat,
-        ]);
+    public function guestHome()
+    {
+
+        if ($this->checkMaintenance() == 1) {
+            return view('layouts.maintenance');
+        } else {
+            $city = City::where('status', 1)->orderBy('name', 'asc')->get();
+            $plan = Plan::where('status', 1)->orderBy('name', 'asc')->get();
+            $cat = Category::with('todo')->where('status', 1)->orderBy('name', 'asc')->get();
+            return view('guest.home', [
+                'city' => $city,
+                'plan' => $plan,
+                'cat' => $cat,
+            ]);
+        }
     }
-  
-    public function logout(){
+
+    public function logout()
+    {
         Auth::logout();
         return redirect()->route('landing');
     }
 
-    public function authenticate(Request $request){
+    public function authenticate(Request $request)
+    {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
+
         if (Auth::attempt($credentials)) {
             // $request->session()->regenerate();
             return redirect()->route('landing');
-        }
-        else{
+        } else {
             return back()->withErrors([
                 'status' => 'error',
                 'message' => 'Invalid Credentials.'
             ]);
-
         }
     }
 }

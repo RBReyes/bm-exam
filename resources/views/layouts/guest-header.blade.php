@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         <div class="links">
             <ul>
-                <li><a href="#" class="white"><i class="icon-location-pin white"></i> Japan</a></li>
+                <li><a href="#" class="white"><i class="icon-location-pin white"></i> Japan Endless Beauty</a></li>
             </ul>
         </div>
         <div class="links float-right">
